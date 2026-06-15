@@ -1,0 +1,16 @@
+{
+  "name": "personal",
+  "claude": {
+    "subscription": "max",
+    "models": ["opus", "sonnet", "haiku"]
+  },
+  "openai": {
+    "subscription": "pro",
+    "models": ["gpt-5.5", "gpt-5.4", "gpt-5.4-mini"],
+    "auth_source": "~/.codex/auth.json"
+  },
+  "limits": {
+    "max_parallel_agents": 16,
+    "prefer_cost": "balanced"
+  }
+}

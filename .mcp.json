@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "ccc": {
+      "command": "bun",
+      "args": ["run", "src/server.ts"],
+      "cwd": "."
+    }
+  }
+}

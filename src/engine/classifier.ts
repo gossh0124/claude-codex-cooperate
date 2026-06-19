@@ -77,10 +77,10 @@ function classifyType(task: string, keywords: string[]): TaskType {
   for (const [type, typeKeywords] of Object.entries(TYPE_KEYWORDS)) {
     let score = 0;
     for (const kw of typeKeywords) {
-      if (lower.includes(kw)) score++;
+      if (lower.includes(kw.toLowerCase())) score++;
     }
     for (const kw of keywords) {
-      if (typeKeywords.some((tk) => tk.includes(kw.toLowerCase()))) score++;
+      if (typeKeywords.some((tk) => tk.toLowerCase().includes(kw.toLowerCase()))) score++;
     }
     if (score > bestScore) {
       bestScore = score;

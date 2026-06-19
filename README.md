@@ -36,7 +36,7 @@ Claude Code (host)
 
 ```bash
 # Clone
-git clone https://github.com/berhen5888/claude-codex-cooperate.git
+git clone https://github.com/gossh0124/claude-codex-cooperate.git
 cd claude-codex-cooperate
 
 # Install
@@ -48,19 +48,33 @@ bun install
 
 ### Configuration
 
-Add to your project's `.mcp.json`:
+Add CCC to any project by creating or editing `.mcp.json` in the project root:
 
 ```json
 {
   "mcpServers": {
     "ccc": {
       "command": "bun",
-      "args": ["run", "/path/to/claude-codex-cooperate/src/server.ts"],
-      "env": {}
+      "args": ["run", "D:/path/to/claude-codex-cooperate/src/server.ts"]
     }
   }
 }
 ```
+
+Or add it globally for all projects via `~/.claude/.mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "ccc": {
+      "command": "bun",
+      "args": ["run", "D:/path/to/claude-codex-cooperate/src/server.ts"]
+    }
+  }
+}
+```
+
+Replace `D:/path/to/claude-codex-cooperate` with your actual clone path.
 
 ## Route Table
 
@@ -79,12 +93,14 @@ Routes are configurable via `config/routes.json`. The score ledger adjusts recom
 ## Roadmap
 
 - [x] Design & plan
-- [ ] v1: MCP server + direct OpenAI API + static routes
-- [ ] v1: Score ledger (write-only)
-- [ ] v1: SKILL.md (replaces DNC v3)
-- [ ] v2: Codex SDK integration (Layer 1)
-- [ ] v2: Heuristic classifier + AI fallback
-- [ ] v2: EMA feedback loop
+- [x] v1: MCP server + direct OpenAI API + static routes
+- [x] v1: Score ledger (write-only)
+- [x] v1: SKILL.md (replaces DNC v3)
+- [x] v1: Heuristic task classifier + rules engine
+- [x] v1: Routing tests
+- [ ] v2: Codex SDK integration (Layer 1 — full agent mode)
+- [ ] v2: AI fallback classifier for ambiguous tasks
+- [ ] v2: EMA feedback loop (ledger scores influence routing)
 - [ ] v2: Multi-plan support
 - [ ] v3: Claude Code plugin packaging
 - [ ] v3: npm package for standalone use

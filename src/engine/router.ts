@@ -49,7 +49,7 @@ function adjustForComplexity(
     provider = "claude";
   }
 
-  if (meta.complexity === "low" && entry.effort !== "low") {
+  if (meta.complexity === "low" && meta.risk === "low" && entry.effort !== "low") {
     effort = "medium";
   }
 
